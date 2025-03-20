@@ -6,27 +6,32 @@ void sendJSONReport() {
 
   doc["status"]["temperature"] = temperature;
   doc["status"]["light"] = lightLevel;
+  doc["status"]["regul"] = regulState;
   doc["status"]["fire"] = fireDetected;
+  doc["status"]["heat"] = heatState;
+  doc["status"]["cold"] = coldState;
   doc["status"]["fanspeed"] = fanSpeed;
 
-  // Informations de localisation
   doc["location"]["room"] = "342";
   doc["location"]["gps"]["lat"] = 43.62453842;
   doc["location"]["gps"]["lon"] = 7.050628185;
   doc["location"]["address"] = "Les lucioles";
 
-  // Informations système
+  doc["regul"]["lt"] = seuilBas;
+  doc["regul"]["ht"] = seuilHaut;
+
   doc["info"]["ident"] = "ESP32 123";
   doc["info"]["user"] = "SBD";
   doc["info"]["loc"] = "A Biot";
 
-  // Informations réseau
-  doc["net"]["ssid"] = "OfflineMode";         
-  doc["net"]["ip"] = "192.168.1.100";         
-  doc["net"]["mac"] = "AC:67:B2:37:C9:48";    
+  doc["net"]["uptime"] = "55";
+  doc["net"]["ssid"] = "FreeBox";
+  doc["net"]["mac"] = "AC:67:B2:37:C9:48";
+  doc["net"]["ip"] = "192.0.0.1";
 
   doc["reporthost"]["target_ip"] = "127.0.0.1";
   doc["reporthost"]["target_port"] = 1880;
+  doc["reporthost"]["sp"] = 2;
 
   // Conversion du JSON en chaîne et affichage
   char json[512];
@@ -49,14 +54,10 @@ void parseJsonCommand() {
 
     if (doc.containsKey("ht")) {
       seuilHaut = doc["ht"];
-      Serial.print("Nouveau seuilHaut: ");
-      Serial.println(seuilHaut);
     }
 
     if (doc.containsKey("lt")) {
       seuilBas = doc["lt"];
-      Serial.print("Nouveau seuilBas: ");
-      Serial.println(seuilBas);
     }
   }
 }

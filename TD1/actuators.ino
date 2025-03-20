@@ -17,9 +17,7 @@ void setLEDColor(uint32_t color) {
 }
 
 void controlSystem() {
-  String regulState = "HALT";
-  String heatState = "OFF";
-  String coldState = "OFF";
+
 
   if (fireDetected) {
     digitalWrite(FIRE_LED_PIN, HIGH);

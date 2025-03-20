@@ -39,6 +39,9 @@ Adafruit_NeoPixel strip(NUMLEDS, LED_STRIP_PIN, NEO_GRB + NEO_KHZ800);
 float temperature = 0;  
 int lightLevel = 0;     
 bool fireDetected = false;
-int fanSpeed = 0;      
+int fanSpeed = 0;
+String regulState = "HALT";
+String heatState = "OFF";
+String coldState = "OFF";  
 
 #endif
