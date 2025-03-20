@@ -11,6 +11,7 @@ void setup() {
 }
 
 void loop() {
+  parseJsonCommand();
   readSensors();
   controlSystem();
   sendJSONReport();

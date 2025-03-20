@@ -3,6 +3,5 @@
 
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
-#include <RemoteDebug.h>
 
 void setupOTA(const char* nameprefix);

@@ -115,7 +115,11 @@ void wifi_connect_multi(String hostname){
   wm.addAP("HUAWEI-6EC2", "FGY9MLBL");
   wm.addAP("HUAWEI-553A", "QTM06RTT");
   wm.addAP("GMAP", "vijx47050");
-  wm.addAP("Livebox-B870","MYCNcZqnvsWsiy7s52");
+  wm.addAP("IOT","iotmiage");
+  wm.addAP("Bbox-EA6814CF","Hvtx6bGfD4Sn7PCs2r");
+  wm.addAP("bluefin","123456789");
+  wm.addAP("Cat co","catia2468");
+  wm.addAP("iPhone de Tarek","123456789");
   
   WiFi.mode(WIFI_OFF);   
   WiFi.mode(WIFI_STA); // Set WiFi to station mode 

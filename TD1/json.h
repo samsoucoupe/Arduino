@@ -2,5 +2,5 @@
 #define JSON_H
 
 void sendJSONReport();
-
+void parseJsonCommand();
 #endif

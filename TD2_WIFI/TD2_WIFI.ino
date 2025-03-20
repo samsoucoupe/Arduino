@@ -3,7 +3,6 @@
 #include <DallasTemperature.h>
 #include <OneWire.h>
 #include <WiFi.h>
-#include "wifi_utils.h"
 
 // Définition des broches
 #define TEMPERATURE_SENSOR_PIN 23

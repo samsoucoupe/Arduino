@@ -33,3 +33,30 @@ void sendJSONReport() {
   serializeJson(doc, json);
   Serial.println(json);
 }
+
+//Fonction pour parse le json entrant 
+void parseJsonCommand() {
+  if (Serial.available()) {
+    String jsonString = Serial.readStringUntil('\n');
+    StaticJsonDocument<256> doc;
+    DeserializationError error = deserializeJson(doc, jsonString);
+
+    if (error) {
+      Serial.print("Erreur de parsing JSON: ");
+      Serial.println(error.c_str());
+      return;
+    }
+
+    if (doc.containsKey("ht")) {
+      seuilHaut = doc["ht"];
+      Serial.print("Nouveau seuilHaut: ");
+      Serial.println(seuilHaut);
+    }
+
+    if (doc.containsKey("lt")) {
+      seuilBas = doc["lt"];
+      Serial.print("Nouveau seuilBas: ");
+      Serial.println(seuilBas);
+    }
+  }
+}

@@ -24,9 +24,9 @@
 #define NUMLEDS 5
 
 // 🔥 Seuils de température et de lumière
-const float seuilHaut = 24;
-const float seuilBas = 23;
-const int seuilLumiere = 400;
+float seuilHaut = 24;
+float seuilBas = 23;
+int seuilLumiere = 400;
 
 // 🌡️ Capteur de température (OneWire + DallasTemperature)
 OneWire oneWire(TEMPERATURE_SENSOR_PIN);
