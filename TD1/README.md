@@ -9,6 +9,7 @@ Composants utilisés
 ## Fonctionnalités
 - Collecte de données : L'ESP32 collecte des données à partir de capteurs connectés.
 - Transmission des données : Les données sont envoyées par câble à un serveur Node-RED.
+- Un script js de vérification et de validation de la conformité du JSON est disponible.
 - Affichage des données : Les données sont affichées sur un tableau de bord Node-RED.
 - Modification des paramètres : Un JSON peut être envoyé via le dashboard  à l'ESP32 pour modifier ses paramètres. (Seulement ht et lt)
 
